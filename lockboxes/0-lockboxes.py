@@ -17,7 +17,11 @@ def canUnlockAll(boxes):
     locked_boxes_index = []
     keys = []
     keys = pushkeys(boxes[0], keys)
-    for box_index in range(1, len(boxes)):
+
+    box_indices = list(range(1, len(boxes)))
+    if keys in box_indices:
+        return True
+    for box_index in box_indices:
         if box_index in keys:
             remaining_boxes -= 1
             keys = pushkeys(boxes[box_index], keys)
