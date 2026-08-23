@@ -5,10 +5,8 @@
 
 def pushkeys(box, keys):
     """Append keys from box to keys list and deduplicate."""
-    for key in box:
-        keys.append(key)
-        keys = list(dict.fromkeys(keys))
-    return keys
+    keys.extend(box)
+    return list(dict.fromkeys(keys))
 
 
 def canUnlockAll(boxes):
