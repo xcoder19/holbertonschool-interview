@@ -19,7 +19,7 @@ def canUnlockAll(boxes):
     keys = pushkeys(boxes[0], keys)
 
     box_indices = list(range(1, len(boxes)))
-    if keys in box_indices:
+    if box_indices in keys:
         return True
     for box_index in box_indices:
         if box_index in keys:
